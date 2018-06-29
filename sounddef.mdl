@@ -1,5 +1,4 @@
 use "gamepanes";
-use "musicdef";
 use "trainingsounddef";
 
 DefaultVOTimeout = 10;
@@ -1054,8 +1053,8 @@ RUStarbaseInternalSound     = GainSound(SFXGain,
                                         (ImportWave("amb10_48int"), 1),
                                         (ImportWave("amb10_49int"), 1),
                                         (ImportWave("amb10_50int"), 1),
-                                        (ImportWave("amb10_52int"), 1),
                                         (ImportWave("amb10_53int"), 1),
+                                        (ImportWave("amb10_52int"), 1),
                                         (ImportWave("amb10_54int"), 1),
                                         (ImportWave("amb10_55int"), 1),
                                         (ImportWave("amb10_56int"), 1),
@@ -1283,6 +1282,15 @@ probe1Sound                 = GainSound(SFXGain, ThreeDSound(100, LoopingSound(I
 tm_4_17rSound               = GainSound(VoiceOverGain, ImportWave("tm_4_17r")); 
 
 //
+//Sidethrusters
+//
+SidethrustInteriorSound        = GainSound(-25, ThreeDSound(100, LoopingSound(ImportWave("accelSmall"))));
+SidethrustExteriorSound        = GainSound(SFXGain, ThreeDSound(100, LoopingSound(ImportWave("accelSmall"))));
+CapSidethrustInteriorSound = GainSound(-25, ThreeDSound(300, LoopingSound(ImportWave("accelCapital"))));
+CapSidethrustExteriorSound = GainSound(SFXGain, ThreeDSound(300, LoopingSound(ImportWave("accelCapital"))));
+
+
+//
 // mapping to game sounds
 //
 
@@ -1401,20 +1409,6 @@ soundList =
         (ripcord3SoundId, ripcord3Sound),
         (ripcord2SoundId, ripcord2Sound),
         (ripcord1SoundId, ripcord1Sound),
-
-        (flightMusic1ASoundId, flightMusic1ASound),
-        (flightMusic1BSoundId, flightMusic1BSound),
-        (flightMusic1CSoundId, flightMusic1CSound),
-        (flightMusic2ASoundId, flightMusic2ASound),
-        (flightMusic2BSoundId, flightMusic2BSound),
-        (flightMusic2CSoundId, flightMusic2CSound),
-        (flightMusic3ASoundId, flightMusic3ASound),
-        (flightMusic3BSoundId, flightMusic3BSound),
-        (flightMusic3CSoundId, flightMusic3CSound),
-        (gameScreenMusicSoundId, gameScreenMusicSound),
-        (deathMusicSoundId, deathMusicSound),
-        (gameOverWonMusicSoundId, gameOverWonMusicSound),
-        (gameOverLostMusicSoundId, gameOverLostMusicSound),
 
         (missileLockSoundId, missileLockSound),
         (missileToneSoundId, missileToneSound),
@@ -2262,6 +2256,12 @@ soundList =
         (943, newMissilesCompletedSound),
         (944, newEquipmentCompletedSound),
         (945, newStationUpgradeSound),
+	
+	//Sidethrusters
+	(SidethrustInteriorSoundId, SidethrustInteriorSound),
+	(SidethrustExteriorSoundId, SidethrustExteriorSound),
+	(CapSidethrustInteriorSoundId, CapSidethrustInteriorSound),
+	(CapSidethrustExteriorSoundId, CapSidethrustExteriorSound),
 
         // training mission sounds
         (tm_slide_1_01SoundId,  tm_slide_1_01Sound),
